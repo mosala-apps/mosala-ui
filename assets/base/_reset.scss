@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+body, html{
+  
+  padding: 0;
+  margin: 0;
+       
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: 10px;
+  scrollbar-color:  $white-color $secondary-color;;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color:$secondary-color;
+}
+body{
+  font-size: 62.8%;
+  background-color: #F6F6F9 !important;
+  font-family:  $font-regular,"Arial", "Helvetica", "sans-serif";
+  
+ 
+}
+html {
+  scroll-behavior: smooth !important;
+}
+.mobile-padding {
+ @media screen and (max-width:568px) {
+  padding-top: 5rem !important;
+ }
+}
+a{
+    text-decoration: none;
+}
+.btn-primary {
+    color: $white-color;
+    transition: .3s ease;
+    font-family: $font-bold;
+    &:hover{
+      background-color: #fff !important;
+      color: $secondary-color;
+    }
+}
+button{
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+@for $i from 1 to 100 {
+  .p-#{$i}{
+    padding: $i*1rem;
+  }
+
+  .pt-#{$i}{
+    padding-top: $i*1rem;
+  }
+  .pb-#{$i}{
+    padding-bottom: $i*1rem;
+  }
+  .px-#{$i}{
+    padding: 0 $i*1rem;
+  }
+  .py-#{$i}{
+    padding: $i*1rem 0;
+  }
+}
+
