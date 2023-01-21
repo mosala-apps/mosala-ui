@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <basic-header />
+    <basic-header/>
     <v-main>
       <div >
         <v-overlay :value="isLoading">
@@ -12,6 +12,7 @@
       </div>
       <Nuxt/>
     </v-main>
+    <basic-footer-desktop/>
     <!-- <mq-layout mq="tablet+">
     <basic-footer-desktop/>
     </mq-layout>

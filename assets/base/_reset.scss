@@ -10,7 +10,7 @@ body, html{
 /* Works on Firefox */
 * {
   scrollbar-width: 10px;
-  scrollbar-color:  $white-color $secondary-color;;
+  scrollbar-color:  $white-color $primary-color;;
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -20,7 +20,7 @@ body, html{
 
 ::-webkit-scrollbar-thumb{
   border-radius: 10px;
-  background-color:$secondary-color;
+  background-color:$primary-color;
 }
 body{
   font-size: 62.8%;
