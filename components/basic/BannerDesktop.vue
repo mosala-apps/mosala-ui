@@ -29,6 +29,7 @@
             <basic-button
               btn-class="btn-light community"
               label="Réjoindre la communauté"
+              @onClick="redirectToRoute('/auth/signup')"
             />
           </div>
         </v-col>
@@ -70,8 +71,9 @@ import a from '~/assets/images/rkota.png'
 import choice from '~/assets/images/choice-man.png'
 import emmie from '~/assets/images/emmie.png'
 import junior from '~/assets/images/junior.png'
+import redirectToRoute from '~/mixins/redirectToRoute'
 export default {
-  mixins: [shareColors],
+  mixins: [shareColors, redirectToRoute],
   props: {
     title: {
       type: String,
@@ -153,9 +155,9 @@ $large-size: 1000px;
     display: flex;
     gap: 1.5rem;
     .talent, .community{
-      padding: 1rem;
+      padding: 1.2rem;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1rem;
       transition: all 0.3s ease-in-out;
     }
     .talent {

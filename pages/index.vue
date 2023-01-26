@@ -6,7 +6,7 @@
   <home-choice-section/>
   <home-recent-projects/>
   <home-statistics-projects/>
-  <home-recent-projects/>
+  <home-work-section/>
  </v-main>
 </template>
 

@@ -113,7 +113,7 @@ a {
 .scroll-btn{
      z-index: 999;
      position: fixed;
-     bottom: 10px;
+     bottom: 5px;
      right: 0;
      background:$secondary-color;
      color:$white-light-color;

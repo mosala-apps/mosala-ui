@@ -4,9 +4,9 @@
       title="Pourquoi nous faire confiance ?"
       class="white-color"
     />
-    <section class="choice__container">
+    <section class="choice__container custom-container">
       <div class="left">
-        <div>
+        <div class="text-flex">
           <h4>Crédibilité</h4>
           <p>
             Nous vérifions les freelances, publions leurs notes d'évaluation et
@@ -14,7 +14,7 @@
             identifier des professionnels éprouvés dans le monde entier.
           </p>
         </div>
-        <div>
+        <div class="text-flex">
           <h4>Sécurité</h4>
           <p>
             Nous offrons la protection de paiement et votre choix de méthode de
@@ -23,16 +23,14 @@
         </div>
       </div>
       <div class="center">
-        <div class="wave-center">
-          <img :src="choiceWave" alt="man" />
-        </div>
+        <div class="wave-center"></div>
 
-        <div class="wave-center">
+        <div>
           <img :src="choiceMan" alt="man" />
         </div>
       </div>
       <div class="right">
-        <div>
+        <div class="text-flex text-left">
           <h4>Des Meilleurs Talents</h4>
           <p>
             L’ admission d'un freelance dans la plateforme, passe par un
@@ -40,7 +38,7 @@
             hardkills); ce qui nous rend different.
           </p>
         </div>
-        <div>
+        <div class="text-flex text-left">
           <h4>Valeur</h4>
           <p>
             Nos frais sont les plus bas du secteur, ce qui vous permet de
@@ -74,66 +72,47 @@ export default {
 .choice__container {
   min-height: 500px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: start;
+  gap: 10rem;
   margin-top: 10rem;
   font-family: $font-regular;
-  .card__choice__container {
-    height: 247px;
-    width: 411px;
-    background-color: #ffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2%;
-    margin: 1%;
-    .card__choice__container-head {
-      display: flex;
-      align-items: center;
-      img {
-        width: 50px;
-        height: 50px;
-      }
-    }
-    h4 {
-      font-family: $font-bold;
-      font-size: 20px;
-      line-height: 1.5;
-      position: relative;
-      left: 10px;
-      right: 0;
-      top: 0;
-    }
-    p {
-      font-size: 14px;
-      line-height: 2;
-      text-align: justify;
-    }
-  }
 }
-.choice__container-bottom {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  top: 1180px;
-  .card__choice__container {
-    width: 408px;
-    margin: 0 1.5%;
-  }
-}
-.center {
-  position: relative;
 
-  .wave-main {
-    position: absolute;
-    top: 100px;
-    right: 0;
-    left: 0; border: 1px solid red;
+.center {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: start;
+  .wave-center {
+    background-color: #fadcc9;
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
   }
+  img {
+    position: absolute;
+    bottom: 0;
+  }
+}
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  height: auto;
+}
+h4 {
+  font-weight: 700;
+  font-size: 25px !important;
+  line-height: 21px;
+}
+p {
+  font-weight: 300;
+  font-size: 14px !important;
+  line-height: 24px;
+}
+
+.text-left{
+  text-align: left;
 }
 </style>

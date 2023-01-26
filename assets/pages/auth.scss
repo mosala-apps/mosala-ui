@@ -1,0 +1,115 @@
+.auth__nav {
+    display: none !important;
+     @include media-query-respond-to(large) {
+      & {
+         display: flex !important;
+      }
+     }
+    background-clip: rgba(164, 160, 160, 0.806);
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 2rem;
+    & > div > span {
+      font-size: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  .auth__signup{
+     margin: 1rem 0;
+     a{
+      text-decoration: underline;
+     }
+     @include media-query-respond-to(large) {
+      & {
+         display: none !important;
+      }
+     }
+  }
+  .auth__forgot-password,
+  .auth__signup {
+    cursor: pointer;
+    z-index: 5;
+    span {
+      display: block;
+      font-size: 0.9rem;
+      transition: 0.3s ease-in;
+      font-weight: 300;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .auth__forgot-password {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .auth__signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.4rem;
+    span {
+      text-decoration: none;
+    }
+  }
+  .auth {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    @include custom-container;
+    @include media-query-respond-to(large) {
+        & {
+           padding: 5rem;
+        }
+      }
+      @include media-query-respond-to(x-large) {
+      & {
+         padding: 5rem 18rem;
+      }
+    }
+    top: 8rem;
+    .auth__title {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      @include media-query-respond-to(medium) {
+        & {
+            font-size: 36px;
+        }
+      }
+      
+    }
+    .auth__action {
+      display: flex;
+      flex-flow: column;
+      justify-items: center;
+      align-items: center;
+      button {
+        display: block;
+        width: 100%;
+      }
+      
+    }
+    .auth__link {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem 0;
+        span {
+          display: block;
+          float: right;
+          font-size: 0.9rem;
+          transition: 0.3s ease-in;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        @include media-query-respond-to(large) {
+            & {
+              display: none;
+            }
+          }
+      }
+  }

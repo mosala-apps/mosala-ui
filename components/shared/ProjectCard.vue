@@ -5,7 +5,7 @@
     </div>
     <div class="card__content">
       <div>
-        <nuxt-link :to="`/projects/${project.slug}`"><h4>{{ title }}[...]</h4></nuxt-link>
+        <nuxt-link :to="`/projects/${project.slug}`"><h4>{{ title }}</h4></nuxt-link>
       <p class="card__title text--medium">
         {{ justification }}
         ...

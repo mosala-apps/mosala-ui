@@ -2,7 +2,7 @@
   <div class="desktop-footer">
     <v-main>
       <v-row class="py-10">
-        <v-col cols="3">
+        <v-col cols="12" sm="6" md="3">
           <ul>
             <h5>Menus</h5>
             <li @click="redirectToRoute('/')">Accueil</li>
@@ -10,17 +10,15 @@
             <li @click="redirectToRoute('/events')">Evenements</li>
           </ul>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="12" sm="6" md="3">
           <ul>
             <h5 class="font-bold">Questions frequents</h5>
             <li @click="redirectToRoute('/about')">A propos</li>
-            <li @click="redirectToRoute('/')">
-             Pourquoi la plateforme ?
-            </li>
+            <li @click="redirectToRoute('/')">Pourquoi la plateforme ?</li>
             <li @click="redirectToRoute('/vision')">Mission et Vision</li>
           </ul>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="12" sm="6" md="3">
           <ul>
             <h5 class="font-bold text-xl">Politiques et confidentialité</h5>
             <li @click="redirectToRoute('/coockies')">Coockies</li>
@@ -30,46 +28,50 @@
             </li>
           </ul>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="12" sm ="6" md="3">
           <div>
             <h5>Souscrire aux newsletters</h5>
             <div class="desktop-footer__newsletters mt-3">
               <input
+                id="email"
                 type="email"
                 name="email"
-                id="email"
                 class="input_newsletters"
                 placeholder="Votre adresse email"
               />
               <button class="btn_newsletters">Souscrire</button>
             </div>
+           
           </div>
         </v-col>
       </v-row>
     </v-main>
     <v-main>
+      <div class="desktop-footer__infos">
+        <div class="footer__social-media">
+              <a to="#"
+                ><v-icon :color="getColors.primaryColor" large
+                  >mdi-facebook</v-icon
+                ></a
+              >
+              <a to="#">
+                <v-icon :color="getColors.primaryColor" large
+                  >mdi-twitter</v-icon
+                ></a
+              >
+              <a to="#">
+                <v-icon :color="getColors.primaryColor" large
+                  >mdi-twitter</v-icon
+                ></a
+              >
+            </div>
+      </div>
+      
       <div class="desktop-footer__bar"></div>
     </v-main>
     <v-main>
-      <div class="desktop-footer__social">
+      <div class="footer__copy-right">
         <h6>Copyright © {{ new Date().getFullYear() }} Mosala</h6>
-        <div>
-          <a to="#" class="p-1"
-            ><v-icon :color="getColors.secondaryColor" large
-              >mdi-facebook</v-icon
-            ></a
-          >
-          <a to="#" class="p-1">
-            <v-icon :color="getColors.secondaryColor" large
-              >mdi-twitter</v-icon
-            ></a
-          >
-          <a to="#" class="p-1">
-            <v-icon :color="getColors.secondaryColor" large
-              >mdi-twitter</v-icon
-            ></a
-          >
-        </div>
       </div>
     </v-main>
   </div>
@@ -94,7 +96,6 @@ export default {
   },
   data() {
     return {
-     
       form: {},
     }
   },
@@ -106,7 +107,7 @@ export default {
 $medium-size: 1200px;
 $large-size: 1000px;
 .desktop-footer {
-  height: 22rem;
+  height: auto;
   width: 100%;
   overflow: hidden;
   padding: 1rem 2rem;
@@ -118,8 +119,8 @@ $large-size: 1000px;
     list-style: none;
     margin: 1rem 0;
     cursor: pointer;
-    transition: all .3s ease-in-out;
-    &:hover{
+    transition: all 0.3s ease-in-out;
+    &:hover {
       color: $primary-color;
     }
   }
@@ -135,14 +136,23 @@ $large-size: 1000px;
       }
     }
   }
-
-  .desktop-footer__social {
+  .desktop-footer__infos {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 10rem;
+  }
+  .footer__copy-right {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 0;
     height: auto;
+  }
+  .footer__social-media {
+    display: flex;
+    gap: 1rem;
   }
   .desktop-footer__bar {
     height: 0.4px;
@@ -175,7 +185,7 @@ $large-size: 1000px;
     font-size: 1rem;
     font-weight: 400;
     &::placeholder {
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
     @include media-query-respond-to(x-large) {
       & {
@@ -204,7 +214,7 @@ $large-size: 1000px;
     width: 100%;
     @include media-query-respond-to(x-large) {
       & {
-        width: 35%;
+        width: auto;
         border-radius: 8px;
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
