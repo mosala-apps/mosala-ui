@@ -102,7 +102,7 @@ $medium-size: 1200px;
 $large-size: 1000px;
 
 .desktop-banner {
-  height: 50rem;
+  height: 40rem;
   width: 100%;
   display: flex;
   justify-content: space-between;

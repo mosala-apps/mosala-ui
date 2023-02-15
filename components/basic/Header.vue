@@ -1,12 +1,12 @@
 <template>
-    <div class="header" id="header">
+    <div id="header" class="header">
       <h2>Mosala</h2>
-      <div class="scroll-btn" id="scrollBtn" @click="scrollUp">
+      <div id="scrollBtn" class="scroll-btn" @click="scrollUp">
         <v-icon color="white">mdi-arrow-up</v-icon>
       </div>
       <div
-        class="header-toggle"
         id="btnToggle"
+        class="header-toggle"
         @click.prevent="handelActive"
       ></div>
   
@@ -27,6 +27,12 @@
   <script>
   import { selectHTMLElement } from "@/utils/helpers";
   export default {
+    mounted() {
+      window.addEventListener("scroll", this.handelScroll);
+      window.addEventListener("scroll", this.handelToUpScroll);
+      window.addEventListener("scroll", this.revealWebSiteElements);
+      this.linksClick();
+    },
     methods: {
       handelScroll(e) {
         e.preventDefault();
@@ -57,22 +63,16 @@
         document.documentElement.scrollTop = 0;
       },
       revealWebSiteElements() {
-        let reveals = selectHTMLElement(".reveal");
+        const reveals = selectHTMLElement(".reveal");
         for (let i = 0; i < reveals.length; i++) {
-          let windowHeight = window.innerHeight;
-          let revealTop = reveals[i].getBoundingClientRect().top;
-          let revealPoint = 50;
+          const windowHeight = window.innerHeight;
+          const revealTop = reveals[i].getBoundingClientRect().top;
+          const revealPoint = 50;
           if (revealTop < windowHeight - revealPoint) {
             reveals[i].classList.toggle("active");
           }
         }
       },
-    },
-    mounted() {
-      window.addEventListener("scroll", this.handelScroll);
-      window.addEventListener("scroll", this.handelToUpScroll);
-      window.addEventListener("scroll", this.revealWebSiteElements);
-      this.linksClick();
     },
   };
   </script>
